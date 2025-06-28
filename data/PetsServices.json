@@ -1,0 +1,69 @@
+{
+  "categoria": "Pets",
+  "categoria-long": "Pets",
+  "id": "pets",
+  "subcategorias": [
+    {
+      "nome": "Veterinários e Clínicas",
+      "id": "veterinarios-clinicas-pets",
+      "tags": [
+        "Consulta veterinária",
+        "Vacinação",
+        "Cirurgias",
+        "Atendimento emergencial",
+        "Exames laboratoriais",
+        "Castração",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Banho e Tosa",
+      "id": "banho-tosa-pets",
+      "tags": [
+        "Banho simples",
+        "Banho com hidratação",
+        "Tosa higiênica",
+        "Tosa na tesoura",
+        "Tosa de raça",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Serviços em Domicílio",
+      "id": "servicos-domicilio-pets",
+      "tags": [
+        "Dog walker (passeador)",
+        "Babá de pets",
+        "Veterinário em casa",
+        "Banho e tosa em domicílio",
+        "Adestramento em domicílio",
+        "Aplicação de medicamentos",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Adestramento",
+      "id": "adestramento-pets",
+      "tags": [
+        "Adestramento básico",
+        "Adestramento avançado",
+        "Correção de comportamento",
+        "Adestramento para filhotes",
+        "Socialização",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Hospedagem e Creche",
+      "id": "hospedagem-creche-pets",
+      "tags": [
+        "Creche para pets",
+        "Hospedagem por diária",
+        "Hospedagem prolongada",
+        "Hotel para animais exóticos",
+        "Hospedagem com passeios",
+        "Outros"
+      ]
+    }
+  ]
+}

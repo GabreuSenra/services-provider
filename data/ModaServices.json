@@ -1,0 +1,82 @@
+{
+  "categoria": "Costura",
+  "categoria-long": "Moda & Costura",
+  "id": "moda",
+  "subcategorias": [
+    {
+      "nome": "Ajustes e Reformas",
+      "id": "ajustes-reformas-moda",
+      "tags": [
+        "Costureira",
+        "Bainha de calça",
+        "Ajuste de cintura",
+        "Ajuste de blazer",
+        "Ajuste de vestido",
+        "Troca de zíper",
+        "Remendo e reforço",
+        "Aperto de roupas",
+        "Alargamento de roupas"
+      ]
+    },
+    {
+      "nome": "Confecção Sob Medida",
+      "id": "confeccao-sob-medida-moda",
+      "tags": [
+        "Vestidos de festa",
+        "Roupas sociais masculinas",
+        "Roupas infantis sob medida",
+        "Uniformes profissionais",
+        "Uniformes escolares",
+        "Roupa para eventos culturais",
+        "Moda praia personalizada",
+        "Conjuntos femininos",
+        "Fantasia personalizada",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Costura Criativa",
+      "id": "costura-criativa-moda",
+      "tags": [
+        "Bolsas artesanais",
+        "Necessaires personalizadas",
+        "Kits para bebê",
+        "Almofadas decorativas",
+        "Itens de pet personalizados",
+        "Toalhas bordadas",
+        "Eco bags",
+        "Produtos com patchwork",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Customização de Roupas",
+      "id": "customizacao-roupas-moda",
+      "tags": [
+        "Eco friendly",
+        "Aplicação de pedrarias",
+        "Pintura em tecido",
+        "Tie dye",
+        "Transformação de peças antigas",
+        "Bordados personalizados",
+        "Cortes e adaptações",
+        "Desfiados e rasgos personalizados",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Aluguel de Roupas",
+      "id": "aluguel-roupas-moda",
+      "tags": [
+        "Vestidos de noiva",
+        "Rernos",
+        "Roupas infantis",
+        "Roupas para formatura",
+        "Roupas temáticas",
+        "Roupas para ensaios",
+        "Fantasias",
+        "Outros"
+      ]
+    }
+  ]
+}

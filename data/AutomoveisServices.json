@@ -1,0 +1,73 @@
+{
+  "categoria": "Automóveis",
+  "categoria-long": "Automóveis",
+  "id": "automoveis",
+  "subcategorias": [
+    {
+      "nome": "Mecânico",
+      "id": "mecanico",
+      "tags": [
+        "Troca de óleo",
+        "Alinhamento e balanceamento",
+        "Reparo de freios",
+        "Troca de pastilhas de freio",
+        "Reparo de suspensão",
+        "Reparo de motor",
+        "Troca de filtros",
+        "Revisão geral",
+        "Otruos"
+      ]
+    },
+    {
+      "nome": "Funilaria e Pintura",
+      "id": "funelaria",
+      "tags": [
+        "Reparo de amassados",
+        "Pintura de veículos",
+        "Polimento",
+        "Envelopamento",
+        "Troca de para-choques",
+        "Reparo de lanternas",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Eletricidade Automotiva",
+      "id": "eletricidade",
+      "tags": [
+        "Reparo de bateria",
+        "Instalação de alarmes",
+        "Reparo de faróis e lanternas",
+        "Reparo de motor de partida",
+        "Instalação de som automotivo",
+        "Instalação de sensores",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Higienização e Estética",
+      "id": "higiene",
+      "tags": [
+        "Lavagem completa",
+        "Polimento e cristalização",
+        "Limpeza interna",
+        "Higienização do ar-condicionado",
+        "Revitalização de bancos",
+        "Troca de carpetes",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Serviços Gerais",
+      "id": "geral",
+      "tags": [
+        "Chaveiro automotivo",
+        "Troca de pneus",
+        "Balanceamento de rodas",
+        "Recarga de ar-condicionado",
+        "Troca de baterias",
+        "Outros"
+      ]
+    }
+  ]
+}

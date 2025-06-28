@@ -1,0 +1,229 @@
+{
+  "categoria": "Casa",
+  "categoria-long": "Casa",
+  "id": "casa",
+  "subcategorias": [
+    {
+      "nome": "Machista",
+      "id": "machista-casa",
+      "tags": ["Encanador Geral"]
+    },
+    {
+      "nome": "Encanador",
+      "id": "encanador-casa",
+      "tags": ["Encanador Geral"]
+    },
+    {
+      "nome": "Eletricista",
+      "id": "eletricista-casa",
+      "tags": [
+        "Eletricista Residencial",
+        "Eletricista Industrial",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Pintura",
+      "id": "pintura-casa",
+      "tags": [
+        "Pintor Residencial",
+        "Pintor Comercial",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Alvenaria",
+      "id": "alvenaria-casa",
+      "tags": [
+        "Pedreiro Geral",
+        "Pedreiro Azulejista",
+        "Pedreiro de Acabamento",
+        "Pedreiro de Alvenaria",
+        "Pedreiro de OAC",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Montagem e Instalação",
+      "id": "montagem-instalacao-casa",
+      "tags": [
+        "Instalador de Equipamentos Elétricos",
+        "Instalador de Equipamentos a Gás",
+        "Instalador de Utensílios Domésticos",
+        "Montador de Móveis",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Marcenaria",
+      "id": "marcenaria-casa",
+      "tags": [
+        "Marceneiro Especializado na Construção de Móveis",
+        "Marceneiro Especializado em Telhados",
+        "Marceneiro Especializado em Pisos e Revestimentos",
+        "Marceneiro Artesão",
+        "Marceneiro de Alvenaria",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Serralheria",
+      "id": "serralheria-casa",
+      "tags": [
+        "Serralheiro de Manutenção",
+        "Serralheiro de Produção",
+        "Serralheiro de Protótipo",
+        "Serralheiro Industrial",
+        "Serralheiro Modelista",
+        "Serralheiro Montador",
+        "Serralheiro Preparador",
+        "Mestre Serralheiro",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Gesso e Drywall",
+      "id": "gesso-drywall-casa",
+      "tags": [
+        "Gesseiro",
+        "Instalação de drywall",
+        "Instalação de placas de gesso",
+        "Instalação de sancas",
+        "Teto de gesso",
+        "Gesso acartonado",
+        "Forros de gesso",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Chaveiro",
+      "id": "chaveiro-casa",
+      "tags": [
+        "Serviços Gerais",
+        "Abertura de Cofres",
+        "Confecção de Chaves Codificadas",
+        "Fechaduras Manuais e Eletrônicas",
+        "Chaveiro 24 horas",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Vidraçaria",
+      "id": "vidracaria-casa",
+      "tags": [
+        "Vidraceiro Residencial",
+        "Vidraceiro Industrial",
+        "Vidraceiro Decorativo",
+        "Vidraceiro de Edificações",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Jardinagem",
+      "id": "jardinagem-casa",
+      "tags": [
+        "Jardineiro Residencial",
+        "Paisagismo",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Piscinas",
+      "id": "piscinas-casa",
+      "tags": [
+        "Piscineiro",
+        "Limpeza de Piscinas",
+        "Troca ou filtragem da água",
+        "Aplicação de produtos químicos",
+        "Retro-lavagem",
+        "Limpeza total",
+        "Limpeza com Hidrojateamento",
+        "Esgotamento de Piscinas",
+        "Instalação de Bombas e Pressurizadores",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Dedetização",
+      "id": "dedetizacao-casa",
+      "tags": [
+        "Dedetizador",
+        "Desratização",
+        "Descupinização",
+        "Desinsetização",
+        "Higienização",
+        "Sanitização",
+        "Controle de Pragas",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Informática e Redes",
+      "id": "informatica-redes-casa",
+      "tags": [
+        "Técnico de Informática",
+        "Técnico de Cabeamento",
+        "Instalação de Pontos de Acesso Wi-Fi",
+        "Manutenção de Computadores/Notebooks",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Refrigeração e Climatização",
+      "id": "refrigeracao-climatizacao-casa",
+      "tags": [
+        "Técnico em Refrigeração",
+        "Instalação de Ar-Condicionado",
+        "Manutenção de Ar-Condicionado",
+        "Limpeza de Ar-Condicionado",
+        "Instalação de Refrigeradores e Freezers",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Desentupidor",
+      "id": "desentupidor-casa",
+      "tags": [
+        "Desentupimento de Vaso sanitário",
+        "Desentupimento de Esgoto",
+        "Desentupimento de Canos",
+        "Desentupimento de Redes Pluviais",
+        "Desentupimento de Galerias",
+        "Desentupimento de Colunas",
+        "Desentupimento de Tubulações de Esgoto",
+        "Desentupimento de Ralos",
+        "Desentupimento de Pias",
+        "Desentupimento de Caixas de gordura",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Mudanças e Transportes",
+      "id": "mudancas-transportes-casa",
+      "tags": [
+        "Fretes",
+        "Mudanças Locais",
+        "Mudanças Interestaduais",
+        "Transporte de Mercadorias",
+        "Pequenos Fretes",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Limpeza Geral",
+      "id": "limpeza-geral-casa",
+      "tags": [
+        "Faxineiro",
+        "Limpeza de Casas e Apartamentos",
+        "Limpeza de Lojas Comerciais",
+        "Limpeza de Escritórios",
+        "Limpeza Pós-Obra",
+        "Limpeza Pré-Mudança",
+        "Limpeza Pós-Mudança",
+        "Limpeza Pós-Festa",
+        "Serviço de Limpeza Pesada",
+        "Outros"
+      ]
+    }
+  ]
+}

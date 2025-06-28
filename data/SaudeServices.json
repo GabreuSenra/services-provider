@@ -1,0 +1,156 @@
+{
+  "categoria": "Bem-estar",
+  "categoria-long": "Saúde & Bem-estar",
+  "id": "saude",
+  "subcategorias": [
+    {
+      "nome": "Clínicas Médicas",
+      "id": "clinicas-medicas-saude",
+      "tags": [
+        "Clínico geral",
+        "Pediatra",
+        "Ginecologista",
+        "Dermatologista",
+        "Cardiologista",
+        "Ortopedista",
+        "Endocrinologista",
+        "Psiquiatra",
+        "Otorrinolaringologista",
+        "Oftalmologista"
+      ]
+    },
+    {
+      "nome": "Consultórios Odontológicos",
+      "id": "consultorios-odontologicos-saude",
+      "tags": [
+        "Dentista clínico geral",
+        "Ortodontia (aparelho)",
+        "Implantes dentários",
+        "Endodontia (canal)",
+        "Odontopediatria",
+        "Clareamento dental",
+        "Próteses dentárias",
+        "Cirurgia bucomaxilofacial"
+      ]
+    },
+    {
+      "nome": "Laboratórios de Prótese",
+      "id": "laboratorios-protese-saude",
+      "tags": [
+        "Confecção de próteses dentárias",
+        "Próteses removíveis",
+        "Próteses fixas",
+        "Próteses sobre implante",
+        "Manutenção e ajustes",
+        "Prótese Geral"
+      ]
+    },
+    {
+      "nome": "Análises Clínicas",
+      "id": "analises-clinicas-saude",
+      "tags": [
+        "Exames de sangue",
+        "Exames de urina",
+        "Exames hormonais",
+        "Exames toxicológicos",
+        "Coleta domiciliar",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Diagnóstico por Imagem",
+      "id": "diagnostico-imagem-saude",
+      "tags": [
+        "Raio-x",
+        "Ultrassom",
+        "Ressonância magnética",
+        "Tomografia computadorizada",
+        "Mamografia",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Psicologos",
+      "id": "psicologos-saude",
+      "tags": [
+        "Presencial",
+        "Online",
+        "Terapia infantil",
+        "Terapia de casal",
+        "Psicologia organizacional",
+        "Psicologia educacional",
+        "Avaliação psicológica",
+        "Geral"
+      ]
+    },
+    {
+      "nome": "Nutricionista",
+      "id": "nutricionista-saude",
+      "tags": [
+        "Consulta presencial",
+        "Consulta online",
+        "Reeducação alimentar",
+        "Dieta personalizada",
+        "Acompanhamento nutricional",
+        "Nutrição funcional",
+        "Geral"
+      ]
+    },
+    {
+      "nome": "Terapias Alternativas",
+      "id": "terapias-alternativas-saude",
+      "tags": [
+        "Acupuntura"
+      ]
+    },
+    {
+      "nome": "Fisioterapeuta",
+      "id": "fisioterapeuta-saude",
+      "tags": [
+        "Ortopédica",
+        "Neurológica",
+        "Respiratória",
+        "Esportiva",
+        "Pós-cirúrgica",
+        "Domiciliar",
+        "Geral"
+      ]
+    },
+    {
+      "nome": "Massoterapia",
+      "id": "massoterapia-saude",
+      "tags": [
+        "Massagem relaxante",
+        "Massagem terapêutica",
+        "Shiatsu",
+        "Massagem modeladora",
+        "Drenagem linfática",
+        "Massagem com pedras quentes",
+        "Geral"
+      ]
+    },
+    {
+      "nome": "Cuidados Pessoais",
+      "id": "cuidados-pessoais-saude",
+      "tags": [
+        "Cuidadores de idosos",
+        "Cuidadores de pessoas com deficiência",
+        "Acompanhamento hospitalar",
+        "Aplicação de injeções",
+        "Verificação de pressão e glicemia",
+        "Geral"
+      ]
+    },
+    {
+      "nome": "Fitness",
+      "id": "fitness-saude",
+      "tags": [
+        "Personal trainer",
+        "Consultoria de bem-estar",
+        "Treinamento funcional",
+        "Avaliação física",
+        "Acompanhamento fitness"
+      ]
+    }
+  ]
+}

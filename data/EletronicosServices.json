@@ -1,0 +1,68 @@
+{
+  "categoria": "Eletrônicos",
+  "categoria-long": "Eletrônicos",
+  "id": "eletronicos",
+  "subcategorias": [
+    {
+      "nome": "Conserto de Celulares",
+      "id": "conserto-celulares",
+      "tags": [
+        "Troca de tela",
+        "Troca de bateria",
+        "Reparo em placa",
+        "Desoxidação",
+        "Atualização de software",
+        "Desbloqueio de aparelho",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Assistência para Computadores",
+      "id": "assistencia-computadores",
+      "tags": [
+        "Reparo de notebooks",
+        "Formatação",
+        "Limpeza",
+        "Troca de peças",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Instalação e Configuração",
+      "id": "instalacao-configuracao",
+      "tags": [
+        "Instalação de roteadores",
+        "Instalação de TVs",
+        "Configuração de câmeras de segurança",
+        "Configuração de sistemas de som",
+        "Instalação de antenas digitais",
+        "Intalações Gerais"
+      ]
+    },
+    {
+      "nome": "Conserto de Eletrodomésticos",
+      "id": "conserto-eletrodomesticos",
+      "tags": [
+        "Reparo de micro-ondas",
+        "Reparo de geladeira",
+        "Reparo de máquina de lavar",
+        "Reparo de fogão",
+        "Manutenção de ar-condicionado",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Geral",
+      "id": "eletronicos-geral",
+      "tags": [
+        "Manutenção de TVs",
+        "Manutenção de videogames",
+        "Reparo de controles remotos",
+        "Ajuste de home theater",
+        "Conserto de rádios e caixas de som",
+        "Reparo de notebooks e tablets",
+        "Outros"
+      ]
+    }
+  ]
+}

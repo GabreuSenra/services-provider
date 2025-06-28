@@ -1,0 +1,88 @@
+{
+  "categoria": "Beleza",
+  "categoria-long": "Beleza & Estética",
+  "id": "beleza", 
+  "subcategorias": [
+    {
+      "nome": "Cabelos",
+      "id": "cabelos-beleza",
+      "tags": [
+        "Corte de cabelo masculino",
+        "Corte de cabelo feminino",
+        "Pintura e coloração",
+        "Hidratação capilar",
+        "Escova e prancha",
+        "Tratamento capilar",
+        "Progressiva",
+        "Luzes ou mechas"
+      ]
+    },
+    {
+      "nome": "Barbearia",
+      "id": "barbearia-beleza",
+      "tags": [
+        "Corte de cabelo masculino",
+        "Barba completa",
+        "Design de barba",
+        "Sobrancelha navalhada",
+        "Pigmentação de barba",
+        "Hidratação de barba",
+        "Corte infantil",
+        "Barbeiro Geral"
+      ]
+    },
+    {
+      "nome": "Estética Facial",
+      "id": "estetica-facial-beleza",
+      "tags": [
+        "Limpeza de pele",
+        "Peeling facial",
+        "Design de sobrancelhas",
+        "Micropigmentação",
+        "Hidratação facial",
+        "Tratamento para acne",
+        "Rejuvenescimento facial",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Estética Corporal",
+      "id": "estetica-corporal-beleza",
+      "tags": [
+        "Massagem relaxante",
+        "Drenagem linfática",
+        "Tratamento contra celulite",
+        "Tratamento contra estrias",
+        "Depilação",
+        "Depilação a cera",
+        "Depilação a laser",
+        "Bronzeamento artificial",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Unhas",
+      "id": "unhas-beleza",
+      "tags": [
+        "Manicure",
+        "Pedicure",
+        "Alongamento de unhas",
+        "Esmaltação em gel",
+        "Unhas decoradas",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Maquiagem",
+      "id": "maquiagem-beleza",
+      "tags": [
+        "Maquiador Geral",
+        "Maquiagem social",
+        "Maquiagem para festas",
+        "Maquiagem artística",
+        "Maquiagem para noivas",
+        "Maquiagem infantil"
+      ]
+    }
+  ]
+}

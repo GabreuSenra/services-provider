@@ -1,0 +1,103 @@
+{
+  "categoria": "Eventos",
+  "categoria-long": "Eventos & Festas",
+  "id": "eventos",
+  "subcategorias": [
+    {
+      "nome": "Buffet e Alimentação",
+      "id": "buffet-alimentacao",
+      "tags": [
+        "Buffet completo",
+        "Garçons e copeiras",
+        "Churrasqueiro",
+        "Cozinheiro",
+        "Barman",
+        "Café da manhã corporativo",
+        "Mesa de doces e salgados",
+        "Serviço de coquetel",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Decoração",
+      "id": "decoracao-eventos",
+      "tags": [
+        "Decoração de casamento",
+        "Decoração de aniversário",
+        "Decoração infantil",
+        "Balões e painéis",
+        "Flores e arranjos",
+        "Aluguel de itens decorativos",
+        "Iluminação cênica",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Locação de Equipamentos",
+      "id": "locacao-equipamentos",
+      "tags": [
+        "Mesas e cadeiras",
+        "Tendas",
+        "Brinquedos infláveis",
+        "Som e iluminação",
+        "Toalhas e utensílios",
+        "Climatizadores",
+        "Palco",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Fotografia e Filmagem",
+      "id": "fotografia-filmagem",
+      "tags": [
+        "Fotógrafo de casamento",
+        "Fotógrafo de aniversário",
+        "Filmagem de eventos",
+        "Edição de vídeos",
+        "Cabine de fotos",
+        "Drone para filmagem aérea",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Música e Entretenimento",
+      "id": "musica-entretenimento",
+      "tags": [
+        "DJ para festas",
+        "Bandas ao vivo",
+        "Músicos para cerimônia",
+        "Animadores infantis",
+        "Recreadores",
+        "Palhaços e personagens vivos",
+        "Show de mágica",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Organização e Planejamento",
+      "id": "organizacao-planejamento",
+      "tags": [
+        "Cerimonialista",
+        "Organizador de casamento",
+        "Organizador de eventos",
+        "Assessoria de eventos",
+        "Cronograma de festa",
+        "Coordenação de fornecedores",
+        "Outros"
+      ]
+    },
+    {
+      "nome": "Estética e Preparação",
+      "id": "estetica-preparacao",
+      "tags": [
+        "Maquiadora profissional",
+        "Cabeleireiro para eventos",
+        "Design de sobrancelhas",
+        "Manicure e pedicure para festas",
+        "Consultoria de moda",
+        "Stylist pessoal",
+        "Outros"
+      ]
+    }
+  ]
+}
