@@ -1,8 +1,9 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 const ITEM_SPACING = 10;
 
-export const signupStyles = StyleSheet.create({
+
+export const globalStyles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
@@ -16,8 +17,14 @@ export const signupStyles = StyleSheet.create({
   subtitle: {
     fontSize: 16,
     color: '#666',
-    marginBottom: 20,
+    marginBottom: 5,
     textAlign: 'left',
+  },
+  sectionTitle: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginTop: Platform.OS === 'web' ? 10 : 0,
+    marginBottom: Platform.OS === 'web' ? 10 : 0,
   },
   errorText: {
     color: 'red',
@@ -35,6 +42,9 @@ export const signupStyles = StyleSheet.create({
   secondaryButtonText: {
     color: '#666', // Cor do texto cinza
   },
+  dropdown: {
+    
+  }
 });
 
 export const perfilStyles = StyleSheet.create({

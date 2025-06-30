@@ -1,15 +1,18 @@
 import ThemedInput from '@/components/ThemedInput';
-import { useRouter } from 'expo-router'; // Importe useLocalSearchParams
+import { useLocalSearchParams, useRouter } from 'expo-router'; // Importe useLocalSearchParams
 import React, { useEffect, useState } from 'react';
 import { Text } from 'react-native';
 
 import ThemedButton from '@/components/ThemedButton';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { signupStyles } from '@/constants/globalStyle';
+import { globalStyles } from '@/constants/globalStyle';
 
 export default function SignupPhone() {
   const router = useRouter();
+  const params = useLocalSearchParams();
+  const { redirectToServiceRegistration } = params; // Obtém o parâmetro
+
 
   const [phone, setPhone] = useState('');
   const [error, setError] = useState('');
@@ -45,15 +48,15 @@ export default function SignupPhone() {
     setError('');
     router.push({
       pathname: '/signup-details', // Navega para a próxima tela
-      params: { phone }, // Passa o telefone
+      params: { redirectToServiceRegistration, phone }, // Passa o telefone
     });
   }
 
 
   return (
-    <ThemedView style={signupStyles.container}>
-      <ThemedText style={signupStyles.title}>Qual é o seu número de telefone?</ThemedText>
-      <ThemedText style={signupStyles.subtitle}>É importante usar um número de telefone válido para criar sua conta</ThemedText>
+    <ThemedView style={globalStyles.container}>
+      <ThemedText style={globalStyles.title}>Qual é o seu número de telefone?</ThemedText>
+      <ThemedText style={globalStyles.subtitle}>É importante usar um número de telefone válido para criar sua conta</ThemedText>
 
       <ThemedInput
         placeholder="Telefone"
@@ -61,7 +64,7 @@ export default function SignupPhone() {
         onChangeText={setPhone}
         keyboardType="phone-pad" // Teclado otimizado para telefone
       />
-      {error ? <Text style={signupStyles.errorText}>{error}</Text> : null}
+      {error ? <Text style={globalStyles.errorText}>{error}</Text> : null}
 
       <ThemedButton title="Continuar" onPress={handleNext} disabled={!isPhoneValid} />
     </ThemedView>

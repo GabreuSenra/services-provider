@@ -6,7 +6,7 @@ import { ActivityIndicator, Text } from 'react-native';
 import ThemedButton from '@/components/ThemedButton';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { signupStyles } from '@/constants/globalStyle';
+import { globalStyles } from '@/constants/globalStyle';
 import { auth, db } from '@/scripts/firebaseConfig';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
@@ -15,7 +15,7 @@ import { doc, setDoc } from 'firebase/firestore';
 export default function Signup() {
   const router = useRouter();
   const params = useLocalSearchParams();
-  const { phone, name } = params; // Obtém todos os dados dos passos anteriores
+  const {redirectToServiceRegistration, phone, name } = params; // Obtém todos os dados dos passos anteriores
 
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
@@ -93,8 +93,17 @@ export default function Signup() {
         });
       }
 
-      // 3. Redirecionar para a tela principal (abas)
-      router.replace('/(tabs)');
+      // 3. Redirecionar
+      if (redirectToServiceRegistration === 'true') {
+        // Redireciona para o cadastro de serviço
+        router.replace({
+        pathname: '/cadastro-servico/RegisterServiceInit'
+      });
+      } else {
+        router.replace('/(tabs)'); // Redireciona para a tela principal normal
+      }
+
+
     } catch (err: any) {
       setLoading(false);
       let errorMessage = 'Ocorreu um erro ao cadastrar. Tente novamente.';
@@ -126,14 +135,14 @@ export default function Signup() {
   }
 
   return (
-    <ThemedView style={signupStyles.container}>
+    <ThemedView style={globalStyles.container}>
 
 
       {/* Passo 1: E-mail */}
       {currentStep === 1 && (
         <>
-          <ThemedText style={signupStyles.title}>Qual é o seu e-mail?</ThemedText>
-          <ThemedText style={signupStyles.subtitle}>É importante usar um e-mail válido para criar sua conta</ThemedText>
+          <ThemedText style={globalStyles.title}>Qual é o seu e-mail?</ThemedText>
+          <ThemedText style={globalStyles.subtitle}>É importante usar um e-mail válido para criar sua conta</ThemedText>
           <ThemedInput
             placeholder="E-mail"
             value={email}
@@ -141,7 +150,7 @@ export default function Signup() {
             autoCapitalize="none"
             keyboardType="email-address"
           />
-          {error ? <Text style={signupStyles.errorText}>{error}</Text> : null}
+          {error ? <Text style={globalStyles.errorText}>{error}</Text> : null}
           <ThemedButton
             title="Continuar"
             onPress={handleContinueToPassword}
@@ -153,8 +162,8 @@ export default function Signup() {
       {/* Passo 2: Senha */}
       {currentStep === 2 && (
         <>
-          <ThemedText style={signupStyles.title}>Defina a sua senha!</ThemedText>
-          <ThemedText style={signupStyles.subtitle}>Defina uma senha para a sua conta</ThemedText>
+          <ThemedText style={globalStyles.title}>Defina a sua senha!</ThemedText>
+          <ThemedText style={globalStyles.subtitle}>Defina uma senha para a sua conta</ThemedText>
           <ThemedInput
             placeholder="Senha"
             value={password}
@@ -167,7 +176,7 @@ export default function Signup() {
             onChangeText={setConfirmPassword}
             secureTextEntry
           />
-          {error ? <Text style={signupStyles.errorText}>{error}</Text> : null}
+          {error ? <Text style={globalStyles.errorText}>{error}</Text> : null}
           <ThemedButton
             title={loading ? 'Cadastrando...' : 'Finalizar Cadastro'}
             onPress={handleSignup}
@@ -176,15 +185,15 @@ export default function Signup() {
           <ThemedButton
             title="Escolher outro E-mail"
             onPress={handleBack}
-            style={signupStyles.secondaryButton}
-            textStyle={signupStyles.secondaryButtonText}
+            style={globalStyles.secondaryButton}
+            textStyle={globalStyles.secondaryButtonText}
             disabled={loading}
           />
         </>
       )}
 
 
-      {loading && <ActivityIndicator size="large" color="#0000ff" style={signupStyles.activityIndicator} />}
+      {loading && <ActivityIndicator size="large" color="#0000ff" style={globalStyles.activityIndicator} />}
     </ThemedView>
   );
 }

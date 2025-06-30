@@ -215,6 +215,9 @@ export default function CategoryPage() {
   // --- Cálculos para o grid de subcategorias ---
   const screenWidth = Dimensions.get('window').width;
 
+  // verifica se é aplicação web ou não
+  const isWebApplication = Platform.OS === 'web' ? false : true;
+
   // Calcula a largura disponível para o conteúdo em MOBILE (subtraindo o padding horizontal)
   const subContentWidthMobile = screenWidth - (2 * SUB_ITEM_SPACING);
   // Calcula o tamanho do item para mobile com base no 'gap'
@@ -236,16 +239,17 @@ export default function CategoryPage() {
     <ThemedView style={homeStyles.container}>
 
       <ThemedView style={[styles.customHeader]}>
-        <TouchableOpacity onPress={() => router.replace('/')} style={styles.backButtonHeader}>
-          <Ionicons name="chevron-back" size={24} color={useThemeColor({}, 'details')} />
-        </TouchableOpacity>
+        {isWebApplication && (
+          <TouchableOpacity onPress={() => router.replace('/')} style={styles.backButtonHeader}>
+            <Ionicons name="chevron-back" size={24} color={useThemeColor({}, 'details')} />
+          </TouchableOpacity>
+        )}
         <ThemedText style={[styles.headerTitle]}>
           {category['categoria-long']}
         </ThemedText>
         {/* Espaço vazio para centralizar o título se houver botão na direita */}
         <View style={{ width: 24, marginLeft: 10 }} /> 
       </ThemedView>
-      {/* FIM DO CABEÇALHO CUSTOMIZADO --- */}
 
       <ScrollView contentContainerStyle={homeStyles.scrollViewContent}>
 

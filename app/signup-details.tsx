@@ -6,12 +6,12 @@ import { Text } from 'react-native';
 import ThemedButton from '@/components/ThemedButton';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { signupStyles } from '@/constants/globalStyle';
+import { globalStyles } from '@/constants/globalStyle';
 
 export default function SignupDetails() {
   const router = useRouter();
   const params = useLocalSearchParams();
-  const { phone } = params; // Obtém e-mail e telefone
+  const {redirectToServiceRegistration, phone } = params; // telefone
 
   const [name, setName] = useState('');
   //const [cpf, setCpf] = useState(''); //desabilitando o cpf por responsabilidades com LGPD, por enquanto
@@ -49,15 +49,15 @@ export default function SignupDetails() {
     setError('');
     router.push({
       pathname: '/signup', // Navega para a próxima tela
-      params: { phone, name}, // Passa todos os dados coletados
+      params: {redirectToServiceRegistration, phone, name}, // Passa todos os dados coletados
     });
   }
 
 
   return (
-    <ThemedView style={signupStyles.container}>
-      <ThemedText style={signupStyles.title}>Complete as informações da sua conta</ThemedText>
-      <ThemedText style={signupStyles.subtitle}>Cadastre seus dados para identificação no app e maior segurança da conta</ThemedText>
+    <ThemedView style={globalStyles.container}>
+      <ThemedText style={globalStyles.title}>Complete as informações da sua conta</ThemedText>
+      <ThemedText style={globalStyles.subtitle}>Cadastre seus dados para identificação no app e maior segurança da conta</ThemedText>
 
       <ThemedInput
         placeholder="Nome e sobrenome"
@@ -75,7 +75,7 @@ export default function SignupDetails() {
         maxLength={14} // Ex: para formato 000.000.000-00
       />*/}
 
-      {error ? <Text style={signupStyles.errorText}>{error}</Text> : null}
+      {error ? <Text style={globalStyles.errorText}>{error}</Text> : null}
 
       <ThemedButton title="Continuar" onPress={handleNext} disabled={!isNameValid} />
     </ThemedView>

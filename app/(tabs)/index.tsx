@@ -112,9 +112,9 @@ export default function HomeScreen() {
               ]}
             >
               <ThemedIconButton
-                iconSource={item.icon} // Já está correto, pois item.icon é o require()
+                iconSource={item.icon} 
                 iconSize={finalItemSize * 0.52}
-                iconColor="#FFF" // Cor do ícone (branco)
+                iconColor="#FFF" 
                 title={item.title}
                 onPress={() => router.push({
                   pathname: "../category/[id]",

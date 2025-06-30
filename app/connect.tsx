@@ -1,4 +1,4 @@
-import { useRouter } from 'expo-router';
+import { useLocalSearchParams, useRouter } from 'expo-router';
 import React from 'react';
 import { StyleSheet, View } from 'react-native'; // Importe View
 
@@ -6,15 +6,23 @@ import ThemedButton from '@/components/ThemedButton'; // Importe ThemedButton
 import { ThemedText } from '@/components/ThemedText'; // Importe ThemedText
 import { ThemedView } from '@/components/ThemedView'; // Importe ThemedView
 
-export default function Login() {
+export default function Connect() {
   const router = useRouter();
+  const params = useLocalSearchParams(); //Obtém parametros
+  const { redirectToServiceRegistration } = params; // Obtém o parâmetro
 
   function goToLoginContinuacao() {
-    router.replace('/login'); // Redireciona para a nova tela de continuação do login
+    router.replace({
+      pathname: '/login',
+      params: { redirectToServiceRegistration },
+    });
   }
 
   function goToSignupPhone() {
-    router.replace('/signup-phone'); // Redireciona para o primeiro passo do cadastro (telefone)
+    router.replace({
+      pathname: '/signup-phone',
+      params: { redirectToServiceRegistration },
+    });
   }
 
   return (

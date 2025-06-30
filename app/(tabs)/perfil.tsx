@@ -22,6 +22,22 @@ export default function Perfil() {
     router.replace('/connect'); 
   }
 
+  function handleRegisterService() {
+    if (logged === true && user) {
+      // Usuário logado: redireciona diretamente para a primeira tela de cadastro de serviço
+      router.push({
+        pathname: '/cadastro-servico/RegisterServiceInit'
+      });
+    } else {
+      // Usuário NÃO logado: redireciona para a criação de conta,
+      // passando um parâmetro para indicar que, após o cadastro, deve ir para o serviço.
+      router.push({
+        pathname: '/connect', // Primeira tela do fluxo de cadastro de conta
+        params: { redirectToServiceRegistration: 'true' }, // Parâmetro para indicar o redirecionamento pós-cadastro
+      });
+    }
+  }
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
       if (firebaseUser) {
@@ -63,11 +79,19 @@ export default function Perfil() {
           <ThemedText style={perfilStyles.name}>{user.displayName ?? 'Usuário sem nome'}</ThemedText>
           <ThemedText style={perfilStyles.email}>{user.email}</ThemedText>
           <ThemedButton title='Sair' onPress={handleLogout} />
+          <ThemedButton
+            title='Cadastre seu serviço'
+            onPress={handleRegisterService}
+          />
         </>
       ) : ( // Se não estiver logado
         <>
           <ThemedText style={perfilStyles.notLoggedInText}>Você não está conectado(a).</ThemedText>
           <ThemedButton title='Entrar ou Cadastrar' onPress={handleLogin} />
+          <ThemedButton
+            title='Cadastre seu serviço'
+            onPress={handleRegisterService}
+          />
         </>
       )}
     </ThemedView>

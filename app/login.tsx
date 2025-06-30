@@ -2,15 +2,19 @@ import ThemedButton from '@/components/ThemedButton';
 import ThemedInput from '@/components/ThemedInput';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { signupStyles } from '@/constants/globalStyle';
+import { globalStyles } from '@/constants/globalStyle';
 import { auth } from '@/scripts/firebaseConfig';
-import { useRouter } from 'expo-router';
+import { useLocalSearchParams, useRouter } from 'expo-router';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useEffect, useState } from 'react'; // Adicionei useEffect para um possível debug futuro
 import { ActivityIndicator, Text } from 'react-native'; // Adicionei Platform
 
 export default function LoginContinuacao() {
   const router = useRouter();
+  const params = useLocalSearchParams();
+  const { redirectToServiceRegistration } = params; // Obtém o parâmetro
+
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -53,7 +57,16 @@ export default function LoginContinuacao() {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      router.replace('/(tabs)');
+
+      //Redireciona
+      if (redirectToServiceRegistration === 'true') {
+        // Redireciona para o cadastro de serviço
+        router.replace({
+        pathname: '/cadastro-servico/RegisterServiceInit'
+      });
+      } else {
+        router.replace('/(tabs)'); // Redireciona para a tela principal normal
+      }
     } catch (err: any) {
       setLoading(false);
       let errorMessage = 'Erro ao fazer login. Verifique seu e-mail e senha.';
@@ -83,13 +96,13 @@ export default function LoginContinuacao() {
   }
 
   return (
-    <ThemedView style={signupStyles.container}>
+    <ThemedView style={globalStyles.container}>
 
       {/* Passo 1: E-mail */}
       {currentStep === 1 && (
         <>
-          <ThemedText style={signupStyles.title}>Qual é o seu e-mail?</ThemedText>
-          <ThemedText style={signupStyles.subtitle}>Insira seu e-mail cadastrado para acessar sua conta</ThemedText>
+          <ThemedText style={globalStyles.title}>Qual é o seu e-mail?</ThemedText>
+          <ThemedText style={globalStyles.subtitle}>Insira seu e-mail cadastrado para acessar sua conta</ThemedText>
           <ThemedInput
             placeholder="E-mail"
             value={email}
@@ -98,8 +111,8 @@ export default function LoginContinuacao() {
             keyboardType="email-address"
             editable={!loading}
           />
-          {loading && <ActivityIndicator size="small" color="#0000ff" style={signupStyles.activityIndicator} />}
-          {error ? <Text style={signupStyles.errorText}>{error}</Text> : null}
+          {loading && <ActivityIndicator size="small" color="#0000ff" style={globalStyles.activityIndicator} />}
+          {error ? <Text style={globalStyles.errorText}>{error}</Text> : null}
           <ThemedButton
             title={loading ? 'Verificando...' : 'Continuar'}
             onPress={handleContinueToPassword}
@@ -111,8 +124,8 @@ export default function LoginContinuacao() {
       {/* Passo 2: Senha */}
       {currentStep === 2 && (
         <>
-          <ThemedText style={signupStyles.title}>Insira sua senha!</ThemedText>
-          <ThemedText style={signupStyles.subtitle}>Insira a senha cadastrada na sua conta</ThemedText>
+          <ThemedText style={globalStyles.title}>Insira sua senha!</ThemedText>
+          <ThemedText style={globalStyles.subtitle}>Insira a senha cadastrada na sua conta</ThemedText>
           <ThemedInput
             placeholder="Senha"
             value={password}
@@ -120,8 +133,8 @@ export default function LoginContinuacao() {
             secureTextEntry
             editable={!loading}
           />
-          {loading && <ActivityIndicator size="small" color="#0000ff" style={signupStyles.activityIndicator} />}
-          {error ? <Text style={signupStyles.errorText}>{error}</Text> : null}
+          {loading && <ActivityIndicator size="small" color="#0000ff" style={globalStyles.activityIndicator} />}
+          {error ? <Text style={globalStyles.errorText}>{error}</Text> : null}
           <ThemedButton
             title={loading ? 'Entrando...' : 'Entrar'}
             onPress={handleLogin}
@@ -130,8 +143,8 @@ export default function LoginContinuacao() {
           <ThemedButton
             title="Voltar"
             onPress={handleBack}
-            style={signupStyles.secondaryButton}
-            textStyle={signupStyles.secondaryButtonText}
+            style={globalStyles.secondaryButton}
+            textStyle={globalStyles.secondaryButtonText}
             disabled={loading}
           />
         </>
