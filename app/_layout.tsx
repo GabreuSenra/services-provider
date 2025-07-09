@@ -120,6 +120,9 @@ export default function RootLayout() {
         <Stack.Screen name="category/[id]" options={categoryHeader} />
         <Stack.Screen name="cadastro-servico/RegisterServiceInit" options={RegisterServiceOption}></Stack.Screen>
         <Stack.Screen name="cadastro-servico/RegisterServiceDetails" options={RegisterServiceOption}></Stack.Screen>
+        <Stack.Screen name="cadastro-servico/RegisterServiceLocation" options={RegisterServiceOption}></Stack.Screen>
+        <Stack.Screen name="cadastro-servico/RegisterServiceReview" options={RegisterServiceOption}></Stack.Screen>
+        <Stack.Screen name="cadastro-servico/RegisterServiceOwnerInfo" options={RegisterServiceOption}></Stack.Screen>
       </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>

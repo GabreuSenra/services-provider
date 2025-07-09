@@ -11,11 +11,12 @@ import { ThemedView } from './ThemedView';
 
 type Props = {
   suggestedTags: string[];
+  selectedTags: string[];
+  setSelectedTags: (tags: string[]) => void;
 };
 
-export default function TagSelector({ suggestedTags }: Props) {
+export default function TagSelector({ suggestedTags, selectedTags, setSelectedTags }: Props) {
   const [input, setInput] = useState('');
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   // Adiciona nova tag, se não estiver repetida
   const addTag = (text: string) => {
