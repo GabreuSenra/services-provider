@@ -10,7 +10,7 @@ import { ThemedView } from '@/components/ThemedView';
 // Importe os dados dos seus serviços
 import ProgressBar from '@/components/ProgressBar';
 import servicesData from '@/components/ServicesData'; // VERIFIQUE O CAMINHO CORRETO
-import { globalStyles } from '@/constants/globalStyle';
+import { globalStyles, PickerStyles } from '@/constants/globalStyle';
 
 
 export default function RegisterServicesInit() {
@@ -51,6 +51,7 @@ export default function RegisterServicesInit() {
 
         <ThemedText type="subtitle" style={globalStyles.sectionTitle}>Selecione uma Categoria</ThemedText>
           <Picker
+          style = {isWebApplication ? PickerStyles.pickerInpuText : undefined}
           selectedValue={selectedCategory}
           onValueChange={(value) => {
             setSelectedCategory(value);
@@ -72,6 +73,7 @@ export default function RegisterServicesInit() {
           <>
           <ThemedText style={globalStyles.sectionTitle}>Selecione uma Subcategoria:</ThemedText>
           <Picker
+            style = {isWebApplication ? PickerStyles.pickerInpuText : undefined}
             selectedValue={selectedSubcategory}
             onValueChange={(value) => setSelectedSubcategory(value)}
           >

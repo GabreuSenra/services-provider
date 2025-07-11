@@ -1,3 +1,4 @@
+import ProgressBar from '@/components/ProgressBar';
 import ThemedButton from '@/components/ThemedButton';
 import ThemedInput from '@/components/ThemedInput';
 import { ThemedText } from '@/components/ThemedText';
@@ -15,11 +16,6 @@ interface AddressData {
   uf: string;
 }
 
-// <<< MUDANÇA: Estrutura para as coordenadas
-interface CoordsData {
-    latitude: number;
-    longitude: number;
-}
 
 export default function RegisterServiceLocation() {
   const params = useLocalSearchParams();
@@ -29,7 +25,6 @@ export default function RegisterServiceLocation() {
   
   const [cep, setCep] = useState('');
   const [address, setAddress] = useState<AddressData | null>(null);
-  const [coords, setCoords] = useState<CoordsData | null>(null); // <<< MUDANÇA: Estado para as coordenadas
   const [number, setNumber] = useState('');
   const [complement, setComplement] = useState('');
 
@@ -41,7 +36,6 @@ export default function RegisterServiceLocation() {
       fetchAddressFromCEP(cep);
     } else {
       setAddress(null);
-      setCoords(null); // <<< MUDANÇA: Limpa as coordenadas também
     }
   }, [cep]);
 
@@ -49,7 +43,6 @@ export default function RegisterServiceLocation() {
     setIsLoading(true);
     setError('');
     setAddress(null);
-    setCoords(null);
 
     try {
       // Passo 1: Buscar endereço no ViaCEP
@@ -77,7 +70,6 @@ export default function RegisterServiceLocation() {
 
       if (geocodeData && geocodeData.length > 0) {
         const { lat, lon } = geocodeData[0];
-        setCoords({ latitude: parseFloat(lat), longitude: parseFloat(lon) });
       } else {
         setError('Não foi possível encontrar as coordenadas para este CEP.');
       }
@@ -105,12 +97,6 @@ export default function RegisterServiceLocation() {
       return; 
     }
 
-    // <<< MUDANÇA: Verifica se as coordenadas foram encontradas
-    if (!coords) {
-        Alert.alert('Localização não encontrada', 'Não foi possível obter as coordenadas do endereço. Tente um CEP próximo.');
-        return;
-    }
-
     const allParams = {
       ...params,
       locationType,
@@ -121,8 +107,6 @@ export default function RegisterServiceLocation() {
       state: address?.uf ?? '',
       number,
       complement,
-      latitude: coords.latitude.toString(), // <<< MUDANÇA: Passa a latitude
-      longitude: coords.longitude.toString(), // <<< MUDANÇA: Passa a longitude
     };
     
     router.push({
@@ -193,7 +177,8 @@ export default function RegisterServiceLocation() {
 
   return (
     <ThemedView style={globalStyles.container}>
-      <ScrollView contentContainerStyle={styles.scrollViewContent}>
+      <ProgressBar currentStep={1} totalSteps={4} /> 
+      <ScrollView contentContainerStyle={globalStyles.scrollViewContent}>
         <ThemedText style={globalStyles.title}>Localização do Serviço</ThemedText>
         <ThemedText style={globalStyles.subtitle}>Onde você realiza seus serviços?</ThemedText>
 

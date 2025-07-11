@@ -1,3 +1,4 @@
+import ProgressBar from '@/components/ProgressBar';
 import ThemedButton from '@/components/ThemedButton';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
@@ -55,21 +56,22 @@ export default function RegisterServiceReviewLocation() {
 
   return (
     <ThemedView style={globalStyles.container}>
-      <ScrollView>
+      <ProgressBar currentStep={1} totalSteps={4} /> 
+      <ScrollView style={globalStyles.scrollViewContent}>
         <ThemedText style={globalStyles.title}>Revise a Localização</ThemedText>
         <ThemedText style={globalStyles.subtitle}>
           Confirme se o endereço abaixo está correto.
         </ThemedText>
 
         {/* Container principal para exibir o endereço */}
-        <View style={styles.addressContainer}>
+        <ThemedView style={styles.addressContainer}>
             <ThemedText style={styles.addressTitle}>
                 {locationType === 'fixo' ? 'Endereço do Estabelecimento' : 'Seu Ponto de Partida'}
             </ThemedText>
             <ThemedText style={styles.addressText}>
                 {getAddressText()}
             </ThemedText>
-        </View>
+        </ThemedView>
 
         <View style={styles.buttonContainer}>
             <ThemedButton

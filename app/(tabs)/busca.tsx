@@ -1,11 +1,19 @@
+import ThemedButton from '@/components/ThemedButton';
+import { ThemedView } from '@/components/ThemedView';
+import { router } from 'expo-router';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 export default function NomeDoComponente() {
+
+  function handleNext(){
+    router.push('/signup');
+  }
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.titulo}>NomeDoComponente</Text>
-    </View>
+    <ThemedView style={styles.container}>
+      <ThemedButton title='Serviço' onPress={handleNext}></ThemedButton>
+    </ThemedView>
   );
 }
 

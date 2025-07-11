@@ -4,11 +4,6 @@
   "id": "casa",
   "subcategorias": [
     {
-      "nome": "Machista",
-      "id": "machista-casa",
-      "tags": ["Encanador Geral"]
-    },
-    {
       "nome": "Encanador",
       "id": "encanador-casa",
       "tags": ["Encanador Geral"]

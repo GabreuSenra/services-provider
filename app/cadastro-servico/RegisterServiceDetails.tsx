@@ -1,3 +1,4 @@
+import ProgressBar from '@/components/ProgressBar';
 import servicesData from '@/components/ServicesData'; // VERIFIQUE O CAMINHO CORRETO
 import TagSelector from '@/components/TagSelectos';
 import ThemedButton from '@/components/ThemedButton';
@@ -74,6 +75,7 @@ export default function NomeDoComponente() {
 
   return (
     <ThemedView style={globalStyles.container}>
+      <ProgressBar currentStep={1} totalSteps={4} /> 
       <ScrollView contentContainerStyle={homeStyles.scrollViewContent}>
         <ThemedText style={globalStyles.title}>Informações do serviço</ThemedText>
         <ThemedText style={globalStyles.subtitle}>Nos conte mais sobre o que você oferece!</ThemedText>

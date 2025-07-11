@@ -111,6 +111,7 @@ export default function LoginContinuacao() {
             keyboardType="email-address"
             editable={!loading}
           />
+          
           {loading && <ActivityIndicator size="small" color="#0000ff" style={globalStyles.activityIndicator} />}
           {error ? <Text style={globalStyles.errorText}>{error}</Text> : null}
           <ThemedButton

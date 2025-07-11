@@ -1,3 +1,4 @@
+import ProgressBar from '@/components/ProgressBar';
 import ThemedButton from '@/components/ThemedButton';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
@@ -7,12 +8,13 @@ import React, { useState } from 'react';
 import { Alert, ScrollView, StyleSheet, View } from 'react-native';
 import { MaskedTextInput } from "react-native-mask-text";
 
-export default function NomeDoComponente() {
+export default function OwnerInfo() {
   const params = useLocalSearchParams();
 
   const [documentType, setDocumentType] = useState<'CPF' | 'CNPJ' | null>(null);
   const [fullName, setFullName] = useState('');
-  const [documentNumber, setDocumentNumber] = useState('');
+  const [cpfNumber, setCpf] = useState('');
+  const [cnpjNumber, setCnpj] = useState('');
   const [birthDate, setBirthDate] = useState('');
 
   const validateForm = () => {
@@ -24,12 +26,14 @@ export default function NomeDoComponente() {
       Alert.alert("Nome Inválido", "Por favor, insira seu nome completo.");
       return false;
     }
-    const unmaskedDoc = documentNumber.replace(/\D/g, '');
-    if (documentType === 'CPF' && unmaskedDoc.length !== 11) {
+    const unmaskedCpf = cpfNumber.replace(/\D/g, '');
+    const unmaskedCnpj = cnpjNumber.replace(/\D/g, '');
+
+    if (documentType === 'CPF' && unmaskedCpf.length !== 11) {
       Alert.alert("CPF Inválido", "O CPF deve conter 11 dígitos.");
       return false;
     }
-    if (documentType === 'CNPJ' && unmaskedDoc.length !== 14) {
+    if (documentType === 'CNPJ' && unmaskedCnpj.length !== 14) {
       Alert.alert("CNPJ Inválido", "O CNPJ deve conter 14 dígitos.");
       return false;
     }
@@ -48,20 +52,21 @@ export default function NomeDoComponente() {
       ...params,
       // Adiciona os dados desta tela
       ownerFullName: fullName.trim(),
-      ownerDocumentType: documentType,
-      ownerDocumentNumber: documentNumber,
+      ownerCpfNumber: cpfNumber,
+      ...(documentType === 'CNPJ' && { ownerCnpjNumber: cnpjNumber }),
       ownerBirthDate: birthDate,
     };
 
-    
+
     router.push({
-      pathname: '/cadastro-servico/RegisterServiceOwnerInfo',
+      pathname: '/cadastro-servico/RegisterServiceFinalReview',
       params: allParams,
     });
   };
 
   return (
     <ThemedView style={globalStyles.container}>
+      <ProgressBar currentStep={1} totalSteps={4} />
       <ScrollView contentContainerStyle={styles.content}>
         <ThemedText style={globalStyles.title}>Informações do Responsável</ThemedText>
         <ThemedText style={globalStyles.subtitle}>
@@ -69,44 +74,70 @@ export default function NomeDoComponente() {
         </ThemedText>
 
         <View style={styles.choiceContainer}>
-            <ThemedButton title="Cadastrar com CPF" onPress={() => setDocumentType('CPF')} />
-            <ThemedButton title="Cadastrar com CNPJ" onPress={() => setDocumentType('CNPJ')}/>
+          <ThemedButton title="Cadastrar com CPF" onPress={() => setDocumentType('CPF')} />
+          <ThemedButton title="Cadastrar com CNPJ" onPress={() => setDocumentType('CNPJ')} />
         </View>
 
-        {documentType && (
-            <View style={styles.formContainer}>
-                <MaskedTextInput
-                    placeholder="Nome completo"
-                    value={fullName}
-                    onChangeText={setFullName}
-                />
-                
-                {documentType === 'CPF' ? (
-                    <MaskedTextInput
-                        mask="999.999.999-99"
-                        placeholder="CPF"
-                        keyboardType="numeric"
-                        value={documentNumber}
-                        onChangeText={(text) => setDocumentNumber(text)}
-                    />
-                ) : (
-                    <MaskedTextInput
-                        mask="99.999.999/9999-99"
-                        placeholder="CNPJ"
-                        keyboardType="numeric"
-                        value={documentNumber}
-                        onChangeText={(text) => setDocumentNumber(text)}
-                    />
-                )}
+        {documentType === 'CPF' ? (
+          <ThemedView style={styles.formContainer}>
+            <MaskedTextInput
+              style={globalStyles.input}
+              placeholder="Nome completo"
+              value={fullName}
+              onChangeText={setFullName}
+            />
 
-                <MaskedTextInput
-                    mask="99/99/9999"
-                    placeholder="Data de Nascimento (DD/MM/AAAA)"
-                    keyboardType="numeric"
-                    value={birthDate}
-                    onChangeText={(text) => setBirthDate(text)}
-                />
-            </View>
+            <MaskedTextInput
+              style={globalStyles.input}
+              mask="999.999.999-99"
+              placeholder="CPF"
+              keyboardType="numeric"
+              value={cpfNumber}
+              onChangeText={(text) => setCpf(text)}
+            />
+
+            <MaskedTextInput
+              style={globalStyles.input}
+              mask="99/99/9999"
+              placeholder="Data de Nascimento (DD/MM/AAAA)"
+              keyboardType="numeric"
+              value={birthDate}
+              onChangeText={(text) => setBirthDate(text)}
+            />
+          </ThemedView>
+        ) : (
+          <ThemedView style={styles.formContainer}>
+            <MaskedTextInput
+              style={globalStyles.input}
+              mask="99.999.999/9999-99"
+              placeholder="CNPJ"
+              keyboardType="numeric"
+              value={cnpjNumber}
+              onChangeText={(text) => setCnpj(text)}
+            />
+            <MaskedTextInput
+              style={globalStyles.input}
+              placeholder="Nome completo do responsável legal"
+              value={fullName}
+              onChangeText={setFullName}
+            />
+            <MaskedTextInput
+              style={globalStyles.input}
+              mask="999.999.999-99"
+              placeholder="CPF do responsável legal"
+              keyboardType="numeric"
+              value={cpfNumber}
+              onChangeText={(text) => setCpf(text)}
+            />
+            <MaskedTextInput
+              style={globalStyles.input}
+              mask="99/99/9999"
+              placeholder="Data de Nascimento (DD/MM/AAAA)"
+              keyboardType="numeric"
+              value={birthDate}
+              onChangeText={(text) => setBirthDate(text)}
+            />
+          </ThemedView>
         )}
 
         <ThemedButton
@@ -120,16 +151,16 @@ export default function NomeDoComponente() {
 }
 
 const styles = StyleSheet.create({
-    content: {
-        flexGrow: 1,
-        padding: 20,
-    },
-    choiceContainer: {
-        marginVertical: 20,
-        gap: 15,
-    },
-    formContainer: {
-        marginBottom: 30,
-        gap: 15,
-    }
+  content: {
+    flexGrow: 1,
+    padding: 20,
+  },
+  choiceContainer: {
+    marginVertical: 20,
+    gap: 15,
+  },
+  formContainer: {
+    marginBottom: 30,
+    gap: 15,
+  }
 });

@@ -10,6 +10,7 @@ const blueColor = '#41a4ff';
 export const Colors = {
   light: {
     text: '#11181C',
+    subtext: '#666',
     background: '#fff',
     tint: tintColorLight,
     icon: '#11181C',
@@ -20,6 +21,7 @@ export const Colors = {
   },
   dark: {
     text: '#ECEDEE',
+    subtext: '#a3a3a3ff',
     background: '#151718',
     tint: tintColorDark,
     icon: '#9BA1A6',

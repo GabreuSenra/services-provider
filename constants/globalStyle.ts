@@ -1,3 +1,4 @@
+import { useThemeColor } from '@/hooks/useThemeColor';
 import { Platform, StyleSheet } from 'react-native';
 
 const ITEM_SPACING = 10;
@@ -16,7 +17,14 @@ export const globalStyles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 16,
-    color: '#666',
+    color: useThemeColor({}, 'subtext'),
+    marginBottom: 5,
+    textAlign: 'left',
+  },
+  boldText: {
+    fontWeight: 'bold',
+    fontSize: 16,
+    color: useThemeColor({}, 'text'),
     marginBottom: 5,
     textAlign: 'left',
   },
@@ -42,9 +50,20 @@ export const globalStyles = StyleSheet.create({
   secondaryButtonText: {
     color: '#666', // Cor do texto cinza
   },
-  dropdown: {
-    
-  }
+  scrollViewContent: {
+    padding: 20,
+  },
+  input: {
+    height: 50,
+    borderRadius: 10,
+    paddingHorizontal: 16,
+    fontSize: 16,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    marginBottom: 16,
+    backgroundColor: useThemeColor({}, "background"),
+    color: useThemeColor({}, "text"),
+  },
 });
 
 export const perfilStyles = StyleSheet.create({
@@ -121,3 +140,15 @@ export const homeStyles = StyleSheet.create({
   },
 });
 
+
+export const PickerStyles = StyleSheet.create({
+  pickerInpuText: {
+    height: 50,
+    borderRadius: 10,
+    paddingHorizontal: 16,
+    fontSize: 16,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    marginBottom: 16,
+  },
+});
